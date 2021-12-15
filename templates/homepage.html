@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block rellink %}
-<link rel="stylesheet" href="/static/homepage.css">
+    <link rel="stylesheet" href="/static/homepage.css">
 {% endblock %}
 
 {% block title %}
@@ -17,6 +17,8 @@
                 <h3>Age: {{user.age}}</h3>
                 <p>Occupation: {{user.occupation}}</p>
             </div>
+            <a href='/delete-user/{{user.id}}'>Delete</a>
+            <a href='/update-user/{{user.id}}'>Edit</a>
         {% endfor %}
     </div>
 {% endblock %}

@@ -33,5 +33,31 @@ def show_users():
     users = UserProfile.query.all()
     return render_template("homepage.html", users=users)
 
+@app.route('/delete-user/<int:id>')
+def delete_user(id):
+    delete_user = UserProfile.query.get_or_404(id)
+    try:
+        db.session.delete(delete_user)
+        db.session.commit()
+        return redirect("/")
+    except:
+        return "Error trying to delete the user"
+
+@app.route('/update-user/<int:id>', methods=['GET', 'POST'])
+def update_user(id):
+    user = UserProfile.query.get_or_404(id)
+    if request.method == "POST":
+        try:
+            user_updates = request.form
+            user.name = request.form['name']
+            user.age = request.form['age']
+            user.occupation = request.form['occupation']
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was an error updating the user'
+    return render_template('update.html', user=user)
+            
+
 if __name__ == "__main__":
     app.run(debug=True)
