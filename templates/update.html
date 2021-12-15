@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 
 {% block rellink %}
-    <link rel="stylesheet" href="/static/update.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/update.css')}}">
 {% endblock %}
 
 {% block title %}
@@ -9,15 +9,17 @@
 {% endblock %}
 
 {% block body %} 
-    <h1>Edit User Information</h1>
+    <h1 class='update-title'>Edit User Information</h1>
     <div class="user-update">
-        <form action="/update-user/{{user.id}}" method="post">
+        <form action="/update-user/{{user.id}}" method="post" enctype="multipart/form-data">
             <label for="name">Full name:</label>
             <input type="text" id="name" name="name" value="{{user.name}}">
             <label for="age">Age:</label>
             <input type="number" id="age" name="age" value="{{user.age}}">
             <label for="occupation">Occupation:</label>
             <input type="text" id="occupation" name="occupation" value="{{user.occupation}}">
+            <label for="image">Profile Picture:</label>
+            <input type="file" id="image" name="image">
             <input type="submit" value="Update">
           </form> 
         </div>

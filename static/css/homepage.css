@@ -1,0 +1,79 @@
+#homepage-title {
+    font-size: 300%;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+
+/* Single User Container */
+.user-container {
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #383838;
+    box-shadow: 5px 5px 10px #1c1c1c;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.user-image {
+    height: 100%;
+    width: 30%;
+}
+
+.user-image img{
+    height: 100%;
+    width: 100%;
+}
+
+.user-info {
+    width: 75%;
+    height: 70%;
+    padding-left: 5%;
+}
+
+.user-info h2,
+.user-info p {
+    color: #fff;
+}
+
+.user-info h2 {
+    font-size: 150%;
+    font-weight: 400;
+}
+
+.user-info p {
+    font-size: 125%;
+    font-weight: 300;
+}
+
+.user-btn-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 65%;
+}
+
+.user-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    background-color: #c49a00;
+    transition-duration: 0.25s;
+    border-radius: 3px;
+}
+
+.user-btn:hover {
+    background-color: #967600;
+}
+
+.user-btn a {
+    text-decoration: none;
+    color: #fff;
+}
