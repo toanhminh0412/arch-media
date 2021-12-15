@@ -1,0 +1,31 @@
+* {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.user-create {
+    text-align: center;
+}
+
+.user-create form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+}
+
+.user-create form label{
+    text-align: left;
+}
+
+.user-create form input {
+    width: 35%;
+    margin-bottom: 1%;
+}
+
+.user-create form input:last-child {
+    width: 15%;
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+<link rel="stylesheet" href="/static/homepage.css">
+{% endblock %}
+
+{% block title %}
+    <title>User profile</title>
+{% endblock %}
+
+{% block body %}
+    <h1>This is homepage</h1>
+        <div class="user-container">
+        {% for user in users %}
+            <div class="user">
+                <h2>Name: {{user.name}}</h2>
+                <h3>Age: {{user.age}}</h3>
+                <p>Occupation: {{user.occupation}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

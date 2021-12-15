@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+<link rel="stylesheet" href="/static/create.css">
+{% endblock %}
+
+{% block title %}
+    <title>User profile</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Create an user</h1>
+    <div class="user-create">
+    <form action="" method="post">
+        <label for="name">Full name:</label>
+        <input type="text" id="name" name="name">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation">
+        <input type="submit" value="Create an user">
+      </form> 
+    </div>
+{% endblock %}
