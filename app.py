@@ -2,21 +2,35 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import base64
 from base64 import b64encode
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 class UserProfile(db.Model):
+    __tablename__ = 'user_profile'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
     age = db.Column(db.Integer, nullable=False)
     occupation = db.Column(db.String(200), nullable=False)
     image_data = db.Column(db.LargeBinary, nullable=False)
     image = db.Column(db.Text, nullable=False)
+    status_list = db.relationship('Status', backref='user')
 
     def __repr__(self):
         return '<UserProfile %r>' % self.name
+
+class Status(db.Model):
+    __tablename__ = 'status'
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(1000), nullable=False)
+    mood = db.Column(db.String(200), nullable = False)
+    created_on = db.Column(db.DateTime(), default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user_profile.id'))
+
+    def __repr__(self):
+        return '<Status %r>' % self.content
 
 def render_picture(data):
     
@@ -70,7 +84,26 @@ def update_user(id):
         except:
             return 'There was an error updating the user'
     return render_template('update.html', user=user)
+
+@app.route('/write-status/<int:user_id>', methods=['GET', 'POST'])
+def write_status(user_id):
+    user = UserProfile.query.get_or_404(user_id)
+    if request.method == "POST":
+        try:
+            status_data = request.form
+            new_status = Status(content=status_data['content'], mood=status_data['mood'], user=user)
+            db.session.add(new_status)
+            db.session.commit()
+            return redirect('/status')
+        except:
+            return 'There was an error writing status'
+    return render_template('write_status.html', user=user)
             
+
+@app.route('/status', methods=['GET'])
+def show_status():
+    status_list = Status.query.all()
+    return render_template('show_status.html', status_list=status_list)
 
 if __name__ == "__main__":
     app.run(debug=True)

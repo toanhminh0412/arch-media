@@ -1,0 +1,35 @@
+#page-title {
+    font-size: 50px;
+    font-weight: 500;
+    color: #fff;
+    margin-left: 2.5%;
+}
+
+.newfeeds-container {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+.status-container {
+    background-color: #383838;
+    box-shadow: 5px 5px 10px #1c1c1c;
+    border-radius: 5px;
+}
+
+.status-container p {
+    color: #fff;
+    padding-left: 5%;
+}
+
+.status-container p:first-child {
+    padding-top: 2.5%;
+}
+
+.status-container p:last-child {
+    padding-bottom: 2.5%;
+}
+
+.mood {
+    font-weight: 500;
+}
