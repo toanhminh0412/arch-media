@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/update_status.css')}}">
+{% endblock %}
+
+{% block title %}
+    <title>Edit status</title>
+{% endblock %}
+
+{% block body %}
+    <h1 class='page-title'>Edit your status</h1>
+    <h2 class='poster-name'>Poster: {{status.user.name}}</h2>
+    <div class='user-status'>
+        <form action="/update-status/{{status.id}}" method="post">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="4" cols="50" placeholder="Write your new content here"></textarea>
+            <label for="mood">Mood:</label>
+            <input type="text" id="mood" name="mood" value={{status.mood}}>
+            <input type="submit" value="Post">
+        </form>
+    </div>
+{% endblock %}

@@ -52,7 +52,7 @@
 .user-btn-container {
     display: flex;
     flex-direction: row;
-    padding-left: 45%;
+    justify-content: flex-end;
 }
 
 .user-btn {
@@ -60,17 +60,18 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 30px;
-    width: 100px;
-    margin-right: 10%;
-    margin-bottom: 5%;
-    background-color: #c49a00;
-    transition-duration: 0.25s;
+    height: 40px;
+    width: 18%;
     border-radius: 3px;
+    background-color: #212121;
+    text-decoration: none;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    transition-duration: 0.25s;
 }
 
 .user-btn:hover {
-    background-color: #967600;
+    background-color: #303030;
 }
 
 .user-btn a {

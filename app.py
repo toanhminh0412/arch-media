@@ -51,12 +51,12 @@ def create_user():
             return redirect("/")
         except:
             return "Error trying to add user" + str(file) + str(image_data)
-    return render_template("create.html")
+    return render_template("users/create_user.html")
 
 @app.route("/", methods=['GET'])
 def show_users():
     users = UserProfile.query.all()
-    return render_template("homepage.html", users=users)
+    return render_template("users/homepage.html", users=users)
 
 @app.route('/delete-user/<int:id>')
 def delete_user(id):
@@ -83,7 +83,7 @@ def update_user(id):
             return redirect('/')
         except:
             return 'There was an error updating the user'
-    return render_template('update.html', user=user)
+    return render_template('users/update_user.html', user=user)
 
 @app.route('/write-status/<int:user_id>', methods=['GET', 'POST'])
 def write_status(user_id):
@@ -97,13 +97,37 @@ def write_status(user_id):
             return redirect('/status')
         except:
             return 'There was an error writing status'
-    return render_template('write_status.html', user=user)
+    return render_template('status/write_status.html', user=user)
             
 
 @app.route('/status', methods=['GET'])
 def show_status():
     status_list = Status.query.all()
-    return render_template('show_status.html', status_list=status_list)
+    return render_template('status/show_status.html', status_list=status_list)
+
+@app.route('/update-status/<int:status_id>', methods=['GET', 'POST'])
+def update_status(status_id):
+    status = Status.query.get_or_404(status_id)
+    if request.method == "POST":
+        try:
+            status_updates = request.form
+            status.content = status_updates['content']
+            status.mood = status_updates['mood']
+            db.session.commit()
+            return redirect('/status')
+        except:
+            return 'There was an error updating status'
+    return render_template('status/update_status.html', status=status)
+
+@app.route('/delete-status/<int:status_id>')
+def delete_status(status_id):
+    status = Status.query.get_or_404(status_id)
+    try:
+        db.session.delete(status)
+        db.session.commit()
+        return redirect('/status')
+    except:
+        return "Error trying to delete the status"
 
 if __name__ == "__main__":
     app.run(debug=True)

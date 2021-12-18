@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css')}}">
+{% endblock %}
+
+{% block title %}
+    <title>User profile</title>
+{% endblock %}
+
+{% block body %}
+    <h1 id='homepage-title'>Active Users</h1>
+        <div class="users-container">
+        {% for user in users %}
+            <div class=user-container>
+                <div class='user-image'>
+                    <img src="data:;base64,{{user.image}}">
+                </div>
+                <div class="user-info">  
+                    <h2>Name: {{user.name}}</h2>
+                    <p>Age: {{user.age}}</p>
+                    <p>Occupation: {{user.occupation}}</p>
+                    <div class='user-btn-container'>
+                        <div class='user-btn'>
+                            <a href='/delete-user/{{user.id}}'>Delete</a>
+                        </div>
+                        <div class='user-btn'>
+                            <a href='/update-user/{{user.id}}'>Edit</a>
+                        </div>
+                        <div class='user-btn'>
+                            <a href='/write-status/{{user.id}}'>Post</a>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

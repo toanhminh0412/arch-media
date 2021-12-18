@@ -1,0 +1,74 @@
+.page-title {
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.poster-name {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+    margin-left: 30%;
+}
+
+.user-status {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.user-status form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-status form label {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 2%;
+}
+
+.user-status form input,
+.user-status form textarea {
+    margin-bottom: 5%;
+    background-color: #1f1f1f;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.user-status form input::placeholder,
+.user-status form textarea::placeholder {
+    color: #fff;
+}
+
+#content {
+    padding-left: 2.5%;
+    padding-top: 1%;
+}
+
+#mood {
+    height: 40px;
+    width: 50%;
+    padding-left: 2.5%;
+}
+
+.user-status form input:last-child {
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    background-color: #c49a00;
+    border-radius: 3px;
+    transition-duration: 0.25s;
+    color: #fff;
+    margin-left: 85%;
+}
+
+.user-status form input:last-child:hover {
+    background-color: #967600;
+}
+
+.user-status form input:last-child {
+    width: 15%;
+}
+

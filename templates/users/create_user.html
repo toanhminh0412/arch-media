@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create.css')}}">
+{% endblock %}
+
+{% block title %}
+    <title>Create profile</title>
+{% endblock %}
+
+{% block body %}
+    <h1 class='create-title'>Create an user</h1>
+    <div class="user-create">
+        <form action="" method="post" enctype="multipart/form-data">
+            <label for="name">Full name:</label>
+            <input type="text" id="name" name="name">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+            <label for="occupation">Occupation:</label>
+            <input type="text" id="occupation" name="occupation">
+            <label for="image">Profile Picture:</label>
+            <input type="file" id="image" name="image">
+            <input type="submit" value="Create an user">
+        </form> 
+    </div>
+{% endblock %}

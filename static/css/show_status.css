@@ -33,3 +33,28 @@
 .mood {
     font-weight: 500;
 }
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.status-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 12%;
+    border-radius: 3px;
+    background-color: #212121;
+    text-decoration: none;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    transition-duration: 0.25s;
+}
+
+.status-btn:hover {
+    background-color: #303030;
+}

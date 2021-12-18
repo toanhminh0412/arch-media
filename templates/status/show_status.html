@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/show_status.css')}}">
+{% endblock %}
+
+{% block title %}
+    <title>User profile</title>
+{% endblock %}
+
+{% block body %}
+    <h1 id='page-title'>New feeds</h1>
+    <div class='newfeeds-container'>
+        {% for status in status_list %}
+            <div class='status-container'>
+                <p class='poster'>{{status.user.name}} feeling <span class='mood'>{{status.mood}}</span>:</p>
+                <p class='content'>{{status.content}}</p>
+                <p class='created'>on {{status.created_on}}</p>
+                <div class='btn-container'>
+                    <a class='status-btn' href='update-status/{{status.id}}'>
+                        <p>Edit</p>
+                    </a>
+
+                    <a class='status-btn' href='delete-status/{{status.id}}'>
+                        <p>Delete</p>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
