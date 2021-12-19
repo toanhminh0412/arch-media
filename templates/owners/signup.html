@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+<body>
+    <header class='nav-bar'>
+        <p id='nav-bar-title'>ArchMedia</p>
+    </header>
+    <h1 class='page-title'>Welcome to ArchMedia</h1>
+    <div class='user-signup'>
+        <h2 id='page-topic'>Register</h2>
+        <p id="message">{{message}}</p>
+        <form action="/signup" method="post">
+            <input type="text" id="name" name="name" placeholder="Enter your name here">
+            <input type="text" id="email" name="email" placeholder="Enter your email here">
+            <input type="text" id="password" name="password" placeholder="Enter your password here">
+            <input type="submit" value="Register">
+        </form>
+        <p id='log-in'>Already have an account? Login <a href='/login'>here</a></p>
+    </div>
+</body>
+</html>

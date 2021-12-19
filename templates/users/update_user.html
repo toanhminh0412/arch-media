@@ -10,6 +10,7 @@
 
 {% block body %} 
     <h1 class='update-title'>Edit User Information</h1>
+    <a href='/delete-user/{{user.id}}' class='delete-btn'>Delete User</a>
     <div class="user-update">
         <form action="/update-user/{{user.id}}" method="post" enctype="multipart/form-data">
             <label for="name">Full name:</label>

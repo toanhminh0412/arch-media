@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block rellink %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_details.css')}}">
+{% endblock %}
+
+{% block title %}
+    <title>{{user.name}}</title>
+{% endblock %}
+
+{% block body %}
+    <div class='profile-container'>
+        <div class='pic-container'>
+            <img id='user-pic' src="data:;base64,{{user.image}}">
+        </div>
+        <div id='user-name'>{{user.name}}</div>
+        <div class='user-info-container'>
+            <div class='user-info' id='user-age'>
+                <p>Age</p>    
+                <p>{{user.age}}</p>
+            </div>
+            <div class='user-info' id='user-occupation'>
+                <p>Occupation</p>
+                <p>{{user.occupation}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

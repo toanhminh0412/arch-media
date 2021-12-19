@@ -30,6 +30,12 @@
     padding-bottom: 2.5%;
 }
 
+.poster a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
 .mood {
     font-weight: 500;
 }

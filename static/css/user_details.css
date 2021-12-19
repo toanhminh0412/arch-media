@@ -1,0 +1,60 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.pic-container {
+    text-align: center;
+}
+
+#user-pic {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+#user-name {
+    font-size: 300%;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 2.5%;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.user-info {
+    margin-top: 2.5%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 0.5px solid #404040;
+    border-radius: 5px;
+    transition-duration: 0.25s;
+}
+
+.user-info:hover {
+    border: 0.5px solid #fff;
+}
+
+.user-info p {
+    color: #fff;
+}
+
+.user-info p:first-child {
+    font-weight: 100;
+    font-size: 200%;
+    margin-bottom: -5%;
+}
+
+.user-info p:last-child {
+    font-weight: 300;
+    font-size: 250%;
+}

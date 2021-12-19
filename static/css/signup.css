@@ -1,0 +1,105 @@
+/* apply on every thing on the sign up page */
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* Navigation bar */
+/* Navigation bar decoration */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    background-color: #1b1c1c;
+    height: 50px;
+    box-shadow: 5px 5px 10px #000;
+}
+
+#nav-bar-title {
+    margin-top: 10px;
+    margin-left: 10%;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Body part */
+body {
+    background-color: #262626;
+}
+
+.page-title {
+    margin-top: 2.5%;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+#page-topic {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+#message {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.user-signup {
+    margin-top: 3%;
+    width: 50%;
+    margin-left: 36.5%;
+}
+
+.user-signup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-signup form input:not(:last-child) {
+    width: 45%;
+    height: 50px;
+    background-color: #1f1f1f;
+    color: #fff;
+    border-radius: 3px;
+    border-bottom: 0.5px solid #fff;
+    padding-left: 2%;
+}
+
+#email,
+#password {
+    margin-top: 2.5%;
+}
+
+.user-signup form input::placeholder {
+    color:#fff;
+}
+
+.user-signup form input:last-child {
+    margin-top: 5%;
+    height: 50px;
+    width: 15%;
+    background-color: #c49a00;
+    color: #fff;
+}
+
+.user-signup form input:last-child:hover {
+    background-color: #967600;
+}
+
+#log-in {
+    margin-top: 2.5%;
+    color: #fff;
+    font-size: 25px;
+}
+
+#log-in a {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 0.5px solid #fff;
+}

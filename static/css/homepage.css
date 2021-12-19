@@ -5,6 +5,12 @@
     text-align: center;
 }
 
+#welcome-text {
+    font-size: 300%;
+    font-weight: 500;
+    color: #fff;
+}
+
 /* Single User Container */
 .user-container {
     display: flex;
@@ -65,7 +71,7 @@
     border-radius: 3px;
     background-color: #212121;
     text-decoration: none;
-    margin-right: 1%;
+    margin-right: 2%;
     margin-bottom: 1%;
     transition-duration: 0.25s;
 }

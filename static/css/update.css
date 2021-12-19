@@ -5,12 +5,32 @@
 .update-title {
     font-size: 50px;
     font-weight: 500;
-    text-align: center;
+    margin-left: 40%;
     color: #fff;
+}
+
+.delete-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #212121;
+    border-radius: 3px;
+    border: 0.5px solid #fff;
+    margin-left: 65%;
+}
+
+.delete-btn:hover {
+    background-color: #303030;
 }
 
 .user-update {
     text-align: center;
+    margin-top: 2.5%;
 }
 
 .user-update form {
@@ -22,12 +42,23 @@
 .user-update form label{
     text-align: left;
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 30px;
 }
 
 .user-update form input {
-    width: 35%;
-    margin-bottom: 1%;
+    width: 40%;
+    margin-bottom: 2%;
+    font-size: 30px;
+}
+
+#name,
+#age,
+#occupation {
+    background-color: #212121;
+    color: #fff;
+    height: 40px;
+    border-radius: 5px;
 }
 
 #image {
@@ -35,18 +66,20 @@
 }
 
 .user-update form input:last-child {
-    height: 30px;
+    height: 40px;
     width: 100px;
-    margin-top: 10px;
-    background-color: #c49a00;
+    margin-top: 30px;
+    background-color: #212121;
     border-radius: 3px;
     transition-duration: 0.25s;
     color: #fff;
-    margin-left: 21%;
+    margin-left: 26%;
+    border: 0.5px solid #fff;
+    font-size: 20px;
 }
 
 .user-update form input:last-child:hover {
-    background-color: #967600;
+    background-color: #303030;
 }
 
 .user-update form input:last-child {

@@ -21,7 +21,7 @@ body {
 #nav-bar-title {
     margin-top: 10px;
     margin-left: 10%;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
     text-decoration: none;
     color: #fff;
@@ -56,5 +56,19 @@ body {
     border-bottom: 1px solid #fff;
 }
 
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+}
 
+.welcome-text p{
+    color: #fff;
+}
 
+#welcome-text-name {
+    font-weight: 500;
+    font-size: 25px;
+    margin-left: 2.5%;
+}

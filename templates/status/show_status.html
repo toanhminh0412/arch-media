@@ -13,7 +13,7 @@
     <div class='newfeeds-container'>
         {% for status in status_list %}
             <div class='status-container'>
-                <p class='poster'>{{status.user.name}} feeling <span class='mood'>{{status.mood}}</span>:</p>
+                <p class='poster'><a href='user-details/{{status.user.id}}'>{{status.user.name}}</a> feeling <span class='mood'>{{status.mood}}</span>:</p>
                 <p class='content'>{{status.content}}</p>
                 <p class='created'>on {{status.created_on}}</p>
                 <div class='btn-container'>
