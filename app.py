@@ -94,8 +94,13 @@ def login():
             if not owner or not check_password_hash(owner.password, request.form['password']):
                 return render_template('owners/login.html', message='Please check your login details and try again')
 
+            if request.form.get('remember'):
+                remember = True
+            else:
+                remember = False
+
             # if the above check passes, then we know the user has the right credentials
-            login_user(owner, remember=True)
+            login_user(owner, remember=remember)
             return redirect('/')
         except:
             return 'There was an error in login process'

@@ -75,6 +75,18 @@ body {
     margin-top: 2.5%;
 }
 
+.checkbox {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+#remember {
+    width: 25px;
+    height: 25px;
+    margin-right: 1%;
+}
+
 .user-login form input::placeholder {
     color:#fff;
 }

@@ -18,7 +18,11 @@
         <p id="message">{{message}}</p>
         <form action="/login" method="post">
             <input type="text" id="email" name="email" placeholder="Email">
-            <input type="text" id="password" name="password" placeholder="Password">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <label class="checkbox">
+                <input type="checkbox" name="remember" id='remember'>
+                Remember me
+            </label>
             <input type="submit" value="Login">
         </form>
         <p id='sign-up'>Do not have an account? Sign up <a href='/signup'>here</a></p>
